@@ -1,6 +1,7 @@
 import { combineReducer } from "redux";
-import TeamReducer from "./teamReducer";
+import teams from "./teamReducer";
 
-const rootReducer = combineReducer({
-    teams: TeamReducer
+
+export  default combineReducer({
+    teams
 });
