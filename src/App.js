@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import CalendarContainer from "./components/containers/CalendarContainer";
+import './App.css';
+import { connect } from 'react-redux';
+import { fetchTeamsAction } from "./actions/index";
+
 
 class App extends Component {
+  
+  componentDidMount = () => {
+    this.props.dispatch(fetchTeamsAction());
+}
+
   render() {
     return (
       <div>
@@ -16,4 +25,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect()(App);

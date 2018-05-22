@@ -1,23 +1,33 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
+import { calculateScore } from '../actions';
+import { bindActionCreators } from "redux";
 
 class MagicPunti extends Component {
+  
+  onChange = e => {
+    this.props.calculateScore(e.target.value);
+};
+
   render() {
     return (
-      <div>
         <input 
+        className="inputMagic"
           type="text"
           onChange={this.onChange}
           />
-      </div>
     )
   }
 };
 
 function mapStateToProps(state) {
   return {
-      teams: state.teams
+      magicPunti: state.magicPunti
   }
 }
 
-export default connect(mapStateToProps)(MagicPunti);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({calculateScore: calculateScore}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MagicPunti);

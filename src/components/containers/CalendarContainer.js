@@ -3,6 +3,8 @@ import CalendarRow from "./CalendarRow";
 
 
 export default class CalendarContainer extends Component {
+    
+
     render() {
         return (
             <table>
@@ -13,6 +15,7 @@ export default class CalendarContainer extends Component {
                 </thead>
                 <tbody>
                     <tr>
+                        <CalendarRow />
                         <CalendarRow />
                     </tr>
                 </tbody>

@@ -6,11 +6,12 @@ import { connect } from "react-redux";
 
 
 class CalendarRow extends Component {
+
   render() {
-      const { teams } = this.props;
+    //   const { teams } = this.props;
     return (
         <td>
-            <Team teamName={teams[0].name}/><MagicPunti /> - <MagicPunti /><Team teamName={teams[1].name}/><Score /> - <Score />
+            <Team /><MagicPunti /> - <MagicPunti /><Team /><Score /> - <Score />
         </td>
     )
   }
@@ -18,7 +19,7 @@ class CalendarRow extends Component {
 
 function mapStateToProps(state) {
     return {
-        teams: state.teams
+        teams: state.teams,
     }
 };
 

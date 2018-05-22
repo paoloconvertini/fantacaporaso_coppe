@@ -1,13 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from "react-redux";
 
 class Team extends Component {
+
     render() {
         return (
-            <div>
-               {this.props.teamName}
+            <div className="team">
+               {this.props.teams[0] && this.props.teams[0].squadra}
             </div>
         )
     }
 };
 
-export default Team;
+function mapStateToProps(state) {
+    return {
+        teams: state
+    }
+}
+
+export default connect(mapStateToProps)(Team);

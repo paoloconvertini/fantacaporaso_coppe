@@ -1,23 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 
-
 class Score extends Component {
   render() {
     return (
       <div>
-        
+        {this.props.score}
       </div>
     )
   }
 };
 
 
-function mapStateToProps(state) {
+function mapStateToProps(store) {
     return {
-        teams: state.teams
+        score: store.pippo
     }
-}
+  }
 
 export default connect(mapStateToProps)(Score);
 
