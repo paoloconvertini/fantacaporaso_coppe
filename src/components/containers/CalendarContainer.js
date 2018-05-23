@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CalendarRow from "./CalendarRow";
+import { Label } from "react-bootstrap";
 
 
 export default class CalendarContainer extends Component {
@@ -10,7 +11,7 @@ export default class CalendarContainer extends Component {
             <table>
                 <thead>
                     <tr>
-                        <th>Giornata {this.props.giornata}</th>
+                        <th><Label bsStyle="info">Giornata {this.props.giornata}</Label></th>
                     </tr>
                 </thead>
                 <tbody>
