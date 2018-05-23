@@ -5,6 +5,7 @@ import MagicPunti from '../MagicPunti';
 import { connect } from "react-redux";
 
 
+
 class CalendarRow extends Component {
 
   render() {

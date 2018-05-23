@@ -7,8 +7,9 @@ import { Panel, Grid, Row, Col } from "react-bootstrap";
 import NavBar from "./components/NavBar";
 import MenuLaterale from "./components/MenuLaterale";
 import { BrowserRouter, Route } from 'react-router-dom';
+import dotenv from 'dotenv';
 
-
+dotenv.config();
 const store = configureStore();
 
 ReactDOM.render(

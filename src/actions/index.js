@@ -1,4 +1,4 @@
-import { CALCULATE_SCORE, FETCH_TEAMS_REQUEST } from "../types";
+import { CALCULATE_SCORE, FETCH_TEAMS_REQUEST, SET_URL_PARAM } from "../types";
 
 export const calculateScore = (score) => {
     return {
@@ -10,5 +10,12 @@ export const calculateScore = (score) => {
 export const fetchTeamsAction = () => {
     return {
         type: FETCH_TEAMS_REQUEST,
+    }
+};
+
+export const setUrlParam = (param) => {
+    return {
+        type: SET_URL_PARAM,
+        payload: param
     }
 };

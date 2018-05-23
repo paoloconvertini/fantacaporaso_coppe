@@ -1,19 +1,31 @@
 import React, { Component } from 'react';
 import { Nav, NavItem } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+import { connect } from "react-redux";
 
-export default class MenuLaterale extends Component {
+
+class MenuLaterale extends Component {
     render() {
+        const { param } = this.props;
+        let paramURL = "/classifica" + (param ? ("-" + param) : "");
         return (
-            <Nav bsStyle="pills" stacked activeKey={1} >
+            <Nav bsStyle="pills" stacked >
                 <NavItem />
                 <NavItem />
-                <NavItem eventKey={1} href="/home">
-                    Calendario
-                </NavItem>
-                <NavItem eventKey={2} >
-                    Classifica
-                </NavItem>
+                <LinkContainer to={paramURL}>
+                    <NavItem eventKey={2} >
+                        Classifica
+                    </NavItem>
+                </LinkContainer>
             </Nav>
         )
     }
 }
+
+function mapStateToProps(state){
+    return {
+        param: state.param
+    }
+}
+
+export default connect(mapStateToProps)(MenuLaterale);
