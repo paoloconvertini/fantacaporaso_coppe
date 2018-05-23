@@ -4,9 +4,10 @@ import { connect } from "react-redux";
 class Team extends Component {
 
     render() {
+        const { teams } = this.props;
         return (
             <div className="team">
-               {this.props.teams[0] && this.props.teams[0].squadra}
+               {teams[0] && teams[0].squadra}
             </div>
         )
     }
@@ -14,7 +15,7 @@ class Team extends Component {
 
 function mapStateToProps(state) {
     return {
-        teams: state
+        teams: state.teams
     }
 }
 

@@ -1,16 +1,13 @@
 import { FETCH_TEAMS_SUCCESS } from "../types";
-import initialState from "./initialState";
+
+const initialState = [];
 
 
-export default function(state = [], action){
+export default function(state = initialState, action){
+    const teams = action.teams;
     switch (action.type) {
         case FETCH_TEAMS_SUCCESS:
-        console.log(state);
-        console.log(action.teams);
-        console.log(action);
-            return {
-                teams: action.teams
-            }
+        return [...state, ...teams];
         default:
             return state;
     }

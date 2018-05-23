@@ -1,5 +1,5 @@
 export const fetchTeams = () => {
-    const API_ENDPOINT = "http://localhost:3000/teams";
+    const API_ENDPOINT = "http://localhost:3001/teams";
 
     return fetch(API_ENDPOINT)
     .then(response => {

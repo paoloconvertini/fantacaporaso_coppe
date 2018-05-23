@@ -1,6 +1,8 @@
 import { CALCULATE_SCORE } from "../types";
 
-export default function (state = 0, action) {
+const initialState = 0;
+
+export default function (state = initialState, action) {
     
     switch (action.type) {
         case CALCULATE_SCORE:
