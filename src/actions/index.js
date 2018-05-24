@@ -1,4 +1,4 @@
-import { CALCULATE_SCORE, FETCH_TEAMS_REQUEST, SET_URL_PARAM } from "../types";
+import { CALCULATE_SCORE, FETCH_TEAMS_REQUEST, SET_URL_PARAM, FETCH_CLASS_EUROPE_REQUEST } from "../types";
 
 export const calculateScore = (score) => {
     return {
@@ -10,6 +10,12 @@ export const calculateScore = (score) => {
 export const fetchTeamsAction = () => {
     return {
         type: FETCH_TEAMS_REQUEST,
+    }
+};
+
+export const fetchClassEurope = () => {
+    return {
+        type: FETCH_CLASS_EUROPE_REQUEST,
     }
 };
 

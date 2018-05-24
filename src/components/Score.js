@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 class Score extends Component {
   render() {
     return (
-      <div>
+      <div className="score">
         {this.props.score}
       </div>
     )

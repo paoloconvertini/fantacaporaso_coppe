@@ -2,6 +2,14 @@
     display: inline;
 }
 
+.score {
+    display: inline;
+}
+
 .inputMagic {
     width: 15px;
+}
+
+.media-left {
+    width: 300px;
 }

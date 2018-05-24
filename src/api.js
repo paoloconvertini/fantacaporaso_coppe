@@ -3,7 +3,7 @@ const CLASSIFICA_CHAMPIONS_ENDPOINT = process.env.REACT_APP_CHAMPIONS_ENDPOINT;
 const CLASSIFICA_COPPA_ITALIA_ENDPOINT = process.env.REACT_APP_COPPA_ITALIA_ENDPOINT;
 const CLASSIFICA_EUROPE_LEAGUE_ENDPOINT = process.env.REACT_APP_EUROPE_LEAGUE_ENDPOINT;
 
-export const fetchTeams = () => {
+export const fetchTeamsApi = () => {
 
     return fetch(TEAMS_ENDPOINT)
     .then(response => {
@@ -18,7 +18,7 @@ export const fetchTeams = () => {
     });
 };
 
-export const fetchClassificaCoppaItalia = () => {
+export const fetchClassificaCoppaItaliaApi = () => {
 
     return fetch(CLASSIFICA_COPPA_ITALIA_ENDPOINT)
     .then(response => {
@@ -33,7 +33,7 @@ export const fetchClassificaCoppaItalia = () => {
     });
 };
 
-export const fetchClassificaChampions = () => {
+export const fetchClassificaChampionsApi = () => {
 
     return fetch(CLASSIFICA_CHAMPIONS_ENDPOINT)
     .then(response => {
@@ -48,17 +48,10 @@ export const fetchClassificaChampions = () => {
     });
 };
 
-export const fetchClassificaEurope = () => {
+export const fetchClassificaEuropeApi = () => {
 
     return fetch(CLASSIFICA_EUROPE_LEAGUE_ENDPOINT)
     .then(response => {
         return response.json();
     })
-    .then(json => {
-        return json.map(({id, competizione, dati}) => ({
-            id,
-            competizione,
-            dati
-        }));
-    });
 };
