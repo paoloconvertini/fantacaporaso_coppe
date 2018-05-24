@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import CalendarRow from "./CalendarRow";
 import { Label, Media } from "react-bootstrap";
 
-
 export default class CalendarContainer extends Component {
-    
 
     render() {
         return (

@@ -10,15 +10,6 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 dati: action.response.dati
-                
-            };
-        case "AGGIORNA_PUNTI":
-            let idSquadra = 1;
-            return {
-                ...state,
-                dati: [
-                    ...state.dati,                    
-                ]
             };
         default:
             return state;

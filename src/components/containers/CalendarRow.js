@@ -5,11 +5,9 @@ import MagicPunti from '../MagicPunti';
 import { connect } from "react-redux";
 
 
-
 class CalendarRow extends Component {
 
   render() {
-    //   const { teams } = this.props;
     return (
         <td>
             <Team /><MagicPunti /> - <MagicPunti /><Team /><Score /> - <Score />

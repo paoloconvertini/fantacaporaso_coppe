@@ -1,13 +1,16 @@
 import { FETCH_CLASS_ITALIA_SUCCESS } from "../types";
 
-const initialState = [];
+const initialState = {
+    dati: [],    
+};
 
-
-export default function(state = initialState, action){
-    const teams = action.teams;
+export default function (state = initialState, action) {
     switch (action.type) {
         case FETCH_CLASS_ITALIA_SUCCESS:
-        return [...state, ...teams];
+            return {
+                ...state,
+                dati: action.response.dati
+            };
         default:
             return state;
     }

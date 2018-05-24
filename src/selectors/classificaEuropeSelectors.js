@@ -1,3 +1,3 @@
 export default {
-    getDati: state => state.classificaEuropeLeague.dati
+    getEuropeDati: state => state.classificaEuropeLeague.dati
 }

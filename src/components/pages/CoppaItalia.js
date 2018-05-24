@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import CalendarContainer from "../containers/CalendarContainer";
+import { Label } from "react-bootstrap";
 
 
 
@@ -8,6 +9,7 @@ export default class CoppaItalia extends Component {
     render() {
         return (
             <div>
+                <div><Label>Coppa Ialia</Label></div>
                 <Button bsStyle="primary" >Calcola giornata</Button>
                 <CalendarContainer giornata={1}/>
                 <CalendarContainer giornata={2}/>

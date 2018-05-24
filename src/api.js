@@ -24,13 +24,6 @@ export const fetchClassificaCoppaItaliaApi = () => {
     .then(response => {
         return response.json();
     })
-    .then(json => {
-        return json.map(({id, competizione, dati}) => ({
-            id,
-            competizione,
-            dati
-        }));
-    });
 };
 
 export const fetchClassificaChampionsApi = () => {
@@ -39,13 +32,6 @@ export const fetchClassificaChampionsApi = () => {
     .then(response => {
         return response.json();
     })
-    .then(json => {
-        return json.map(({id, competizione, dati}) => ({
-            id,
-            competizione,
-            dati
-        }));
-    });
 };
 
 export const fetchClassificaEuropeApi = () => {

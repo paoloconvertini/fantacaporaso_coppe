@@ -4,10 +4,9 @@ import Selectors from '../../selectors';
 
 class ClassificaRow extends Component {
   render() {
-      const { dati } = this.props;      
     return (
         <tbody>
-            {dati.map( (row) => 
+            {this.props.dati.map( (row) => 
               <tr key={row.id}>
                 <td>{row.squadra}</td>
                 <td>{row.punti}</td>
@@ -28,8 +27,18 @@ class ClassificaRow extends Component {
 }
 
 function mapStateToProps(state){
-    return {
-        dati: Selectors.getDati(state),
+    if(state.param === "") {
+        return {
+            dati: Selectors.getCoppaItaliaDati(state),
+        }
+    } else if(state.param === "champions") {
+        return {
+            dati: Selectors.getChampionsDati(state),
+        }
+    } else {
+        return {
+            dati: Selectors.getEuropeDati(state),
+        }
     }
 }
 

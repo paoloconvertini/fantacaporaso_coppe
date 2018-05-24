@@ -2,25 +2,33 @@ import React, { Component } from 'react';
 import { Nav, NavItem } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { fetchClassEurope } from "../actions"
+import { fetchClassEurope, fetchClassChampions, fetchClassItalia } from "../actions"
 
 
 class MenuLaterale extends Component {
 
-    onClick = e => {
-        this.props.onClick();
+    onClick(param) {
+        console.log(param);
+        if(param === "") {
+            this.props.fetchClassItalia();
+        } else if(param === "europe") {
+            this.props.fetchClassEurope();
+        } else {
+            this.props.fetchClassChampions();
+        }
+        
     }
 
     render() {
         const { param } = this.props;
+        console.log(param);
         let paramURL = "/classifica" + (param ? ("-" + param) : "");
         return (
             <Nav bsStyle="pills" activeKey={1} stacked >
                 <NavItem />
                 <NavItem />
                 <LinkContainer to={paramURL}>
-                    <NavItem eventKey={1} onClick={this.onClick}>
+                    <NavItem eventKey={1} onClick={e => {this.onClick(param)}}>
                         Classifica
                     </NavItem>
                 </LinkContainer>
@@ -35,8 +43,19 @@ function mapStateToProps(state){
     }
 }
 
-function mapDispatchToProps(dispatch){
-    return bindActionCreators({onClick: fetchClassEurope}, dispatch);
-}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchClassItalia: () => {
+            dispatch(fetchClassItalia())
+        },
+        fetchClassChampions: () => {
+            dispatch(fetchClassChampions())
+        },
+        fetchClassEurope: () => {
+            dispatch(fetchClassEurope())
+        }
+    }
+    
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(MenuLaterale);
