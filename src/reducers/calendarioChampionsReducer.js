@@ -1,4 +1,4 @@
-import { FETCH_CLASS_EUROPE_SUCCESS } from "../types";
+import { FETCH_CALEND_CHAMP_SUCCESS } from "../types";
 
 const initialState = {
     dati: [],    
@@ -6,7 +6,7 @@ const initialState = {
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case FETCH_CLASS_EUROPE_SUCCESS:
+        case FETCH_CALEND_CHAMP_SUCCESS:
             return {
                 ...state,
                 dati: action.response

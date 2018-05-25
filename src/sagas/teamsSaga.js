@@ -1,16 +1,7 @@
 import { call, put } from "redux-saga/effects";
-import { fetchTeamsApi, fetchClassificaEuropeApi, fetchClassificaCoppaItaliaApi, fetchClassificaChampionsApi } from "../api";
+import { fetchClassificaEuropeApi, fetchClassificaCoppaItaliaApi, fetchClassificaChampionsApi, fetchCalendChampionsApi, fetchCalendEuropeApi, fetchCalendCoppaItaliaApi } from "../api";
 import * as types from '../types';
 
-
-export function* fetchTeams() {
-  try {
-    const teams = yield call(fetchTeamsApi);
-    yield put({type: types.FETCH_TEAMS_SUCCESS, teams});
-  } catch (error) {
-    yield put({type: types.FETCH_TEAMS_FAILURE, error})
-  }
-}
 
 export function* fetchClassificaEurope() {
   try {
@@ -36,5 +27,32 @@ export function* fetchClassificaChampions() {
     yield put({type: types.FETCH_CLASS_CHAMP_SUCCESS, response});
   } catch (error) {
     yield put({type: types.FETCH_CLASS_CHAMP_FAILURE, error})
+  }
+}
+
+export function* fetchCalendEurope() {
+  try {
+    const response = yield call(fetchCalendEuropeApi);
+    yield put({type: types.FETCH_CALEND_EUROPE_SUCCESS, response});
+  } catch (error) {
+    yield put({type: types.FETCH_CALEND_EUROPE_FAILURE, error})
+  }
+}
+
+export function* fetchCalendItalia() {
+  try {
+    const response = yield call(fetchCalendCoppaItaliaApi);
+    yield put({type: types.FETCH_CALEND_ITALIA_SUCCESS, response});
+  } catch (error) {
+    yield put({type: types.FETCH_CALEND_ITALIA_FAILURE, error})
+  }
+}
+
+export function* fetchCalendChampions() {
+  try {
+    const response = yield call(fetchCalendChampionsApi);
+    yield put({type: types.FETCH_CALEND_CHAMP_SUCCESS, response});
+  } catch (error) {
+    yield put({type: types.FETCH_CALEND_CHAMP_FAILURE, error})
   }
 }

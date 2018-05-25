@@ -20,14 +20,8 @@ class MagicPunti extends Component {
   }
 };
 
-function mapStateToProps(state) {
-  return {
-      magicPunti: state.magicPunti
-  }
-}
-
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({calculateScore: calculateScore}, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MagicPunti);
+export default connect(null, mapDispatchToProps)(MagicPunti);

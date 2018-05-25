@@ -21,7 +21,6 @@ class MenuLaterale extends Component {
 
     render() {
         const { param } = this.props;
-        console.log(param);
         let paramURL = "/classifica" + (param ? ("-" + param) : "");
         return (
             <Nav bsStyle="pills" activeKey={1} stacked >

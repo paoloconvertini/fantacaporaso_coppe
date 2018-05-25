@@ -1,3 +1,4 @@
 export default {
-    getEuropeDati: state => state.classificaEuropeLeague.dati
+    getEuropeGironeA: state => state.classificaEuropeLeague.dati.gironeA,
+    getEuropeGironeB: state => state.classificaEuropeLeague.dati.gironeB
 }

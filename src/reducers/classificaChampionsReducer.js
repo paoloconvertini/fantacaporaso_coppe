@@ -9,7 +9,7 @@ export default function (state = initialState, action) {
         case FETCH_CLASS_CHAMP_SUCCESS:
             return {
                 ...state,
-                dati: action.response.dati
+                dati: action.response
             };
         default:
             return state;

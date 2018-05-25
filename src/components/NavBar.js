@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Nav, NavItem } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { setUrlParam } from '../actions';
+import { setUrlParam, fetchClassEurope, fetchClassChampions, fetchClassItalia, fetchCalendItalia, fetchCalendChampions, fetchCalendEurope } from '../actions';
 
 
 
@@ -19,12 +18,18 @@ class NavBar extends Component {
       switch (selectedKey) {
         case "1":
           param = "";
+          this.props.fetchClassItalia();
+          this.props.fetchCalendItalia();
           break;
         case "2":
           param = "champions";
+          this.props.fetchClassChampions();
+          this.props.fetchCalendChampions();
           break;
         case "3":
           param = "europe";
+          this.props.fetchClassEurope();
+          this.props.fetchCalendEurope();
           break;
         default:
           break;
@@ -56,15 +61,36 @@ class NavBar extends Component {
     }
   }
 
-  function mapStateToProps(state){
-    return {
-      param: state.param
-    }
+function mapStateToProps(state){
+  return {
+    param: state.param
   }
-
+}
   
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({setUrlParam: setUrlParam}, dispatch);
+const mapDispatchToProps = (dispatch, param) => {
+  return {
+      setUrlParam: param => {
+        dispatch(setUrlParam(param))
+      },
+      fetchClassItalia: () => {
+        dispatch(fetchClassItalia())
+      },
+      fetchClassChampions: () => {
+        dispatch(fetchClassChampions())
+      },
+      fetchClassEurope: () => {
+        dispatch(fetchClassEurope())
+      },
+      fetchCalendItalia: () => {
+        dispatch(fetchCalendItalia())
+      },
+      fetchCalendChampions: () => {
+        dispatch(fetchCalendChampions())
+      },
+      fetchCalendEurope: () => {
+        dispatch(fetchCalendEurope())
+      }
+  }
 }
   
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar)

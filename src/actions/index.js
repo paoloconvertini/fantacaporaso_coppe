@@ -1,15 +1,9 @@
-import { CALCULATE_SCORE, FETCH_TEAMS_REQUEST, SET_URL_PARAM, FETCH_CLASS_EUROPE_REQUEST, FETCH_CLASS_CHAMP_REQUEST, FETCH_CLASS_ITALIA_REQUEST } from "../types";
+import { CALCULATE_SCORE, SET_URL_PARAM, FETCH_CLASS_EUROPE_REQUEST, FETCH_CLASS_CHAMP_REQUEST, FETCH_CLASS_ITALIA_REQUEST, FETCH_CALEND_EUROPE_REQUEST, FETCH_CALEND_CHAMP_REQUEST, FETCH_CALEND_ITALIA_REQUEST } from "../types";
 
 export const calculateScore = (score) => {
     return {
         type: CALCULATE_SCORE,
         payload: score
-    }
-};
-
-export const fetchTeamsAction = () => {
-    return {
-        type: FETCH_TEAMS_REQUEST,
     }
 };
 
@@ -28,6 +22,24 @@ export const fetchClassChampions = () => {
 export const fetchClassItalia = () => {
     return {
         type: FETCH_CLASS_ITALIA_REQUEST,
+    }
+};
+
+export const fetchCalendEurope = () => {
+    return {
+        type: FETCH_CALEND_EUROPE_REQUEST,
+    }
+};
+
+export const fetchCalendChampions = () => {
+    return {
+        type: FETCH_CALEND_CHAMP_REQUEST,
+    }
+};
+
+export const fetchCalendItalia = () => {
+    return {
+        type: FETCH_CALEND_ITALIA_REQUEST,
     }
 };
 

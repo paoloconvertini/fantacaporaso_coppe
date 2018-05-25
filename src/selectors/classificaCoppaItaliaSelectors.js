@@ -1,3 +1,4 @@
 export default {
-    getCoppaItaliaDati: state => state.classificaCoppaItalia.dati
+    getCoppaItaliaGironeA: state => state.classificaCoppaItalia.dati.gironeA,
+    getCoppaItaliaGironeB: state => state.classificaCoppaItalia.dati.gironeB
 }
