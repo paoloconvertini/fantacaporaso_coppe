@@ -14,7 +14,7 @@ class Score extends Component {
 
 function mapStateToProps(store) {
     return {
-        score: store.score
+        scoreStore: store.score
     }
   }
 

@@ -10,13 +10,21 @@ class MagicPunti extends Component {
 };
 
   render() {
-    return (
-        <input 
-        className="inputMagic"
-          type="text"
-          onChange={this.onChange}
-          />
-    )
+    if(this.props.magic) {
+      return (
+        <span>
+          {this.props.magic}
+        </span>
+      )
+    } else {
+      return (
+          <input 
+            className="inputMagic"
+            type="text"
+            onChange={this.onChange}
+            />
+      )
+    }
   }
 };
 
