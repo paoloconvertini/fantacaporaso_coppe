@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
-import Giornata1 from "./Giornata1";
-import Giornata2 from "./Giornata2";
-import Giornata3 from "./Giornata3";
-import Giornata4 from "./Giornata4";
-import Giornata5 from "./Giornata5";
-import Giornata6 from "./Giornata6";
+import GiornataRow from "./GiornataRow";
 import GironeTipo from "./GironeTipo";
 import { connect } from "react-redux";
 import { Label, Media } from "react-bootstrap";
@@ -18,11 +13,11 @@ class CalendarContainer extends Component {
                         <Media>
                             <Label bsStyle="info">Giornata {this.props.giornata}</Label>
                             <GironeTipo tipo={"A"} />
-                            <Giornata1 girone={"A"} />
+                            <GiornataRow girone={"A"} giornata={0} squadre={[0,1,2,3]}/>
                         </Media>
                         <Media>
                             <GironeTipo tipo={"B"} />
-                            <Giornata1 girone={"B"} />
+                            <GiornataRow girone={"B"} giornata={0} squadre={[0,1,2,3]}/>
                         </Media>
                     </div>
                 )
@@ -32,11 +27,11 @@ class CalendarContainer extends Component {
                         <Media>
                             <Label bsStyle="info">Giornata {this.props.giornata}</Label>
                             <GironeTipo tipo={"A"} />
-                            <Giornata2 girone={"A"} />
+                            <GiornataRow girone={"A"} giornata={1} squadre={[0,2,1,3]}/>
                         </Media>
                         <Media>
                             <GironeTipo tipo={"B"} />
-                            <Giornata2 girone={"B"} />
+                            <GiornataRow girone={"B"} giornata={1} squadre={[0,2,1,3]}/>
                         </Media>
                     </div>
                 )
@@ -46,11 +41,11 @@ class CalendarContainer extends Component {
                         <Media>
                             <Label bsStyle="info">Giornata {this.props.giornata}</Label>
                             <GironeTipo tipo={"A"} />
-                            <Giornata3 girone={"A"} />
+                            <GiornataRow girone={"A"} giornata={2} squadre={[0,3,2,1]}/>
                         </Media>
                         <Media>
                             <GironeTipo tipo={"B"} />
-                            <Giornata3 girone={"B"} />
+                            <GiornataRow girone={"B"} giornata={2} squadre={[0,3,2,1]}/>
                         </Media>
                     </div>
                 )
@@ -60,11 +55,11 @@ class CalendarContainer extends Component {
                         <Media>
                             <Label bsStyle="info">Giornata {this.props.giornata}</Label>
                             <GironeTipo tipo={"A"} />
-                            <Giornata4 girone={"A"} />
+                            <GiornataRow girone={"A"} giornata={3} squadre={[1,0,3,2]}/>
                         </Media>
                         <Media>
                             <GironeTipo tipo={"B"} />
-                            <Giornata4 girone={"B"} />
+                            <GiornataRow girone={"B"} giornata={3} squadre={[1,0,3,2]}/>
                         </Media>
                     </div>
                 )
@@ -74,11 +69,11 @@ class CalendarContainer extends Component {
                         <Media>
                             <Label bsStyle="info">Giornata {this.props.giornata}</Label>
                             <GironeTipo tipo={"A"} />
-                            <Giornata5 girone={"A"} />
+                            <GiornataRow girone={"A"} giornata={4} squadre={[2,0,3,1]}/>
                         </Media>
                         <Media>
                             <GironeTipo tipo={"B"} />
-                            <Giornata5 girone={"B"} />
+                            <GiornataRow girone={"B"} giornata={4} squadre={[2,0,3,1]}/>
                         </Media>
                     </div>
                 )
@@ -88,11 +83,11 @@ class CalendarContainer extends Component {
                         <Media>
                             <Label bsStyle="info">Giornata {this.props.giornata}</Label>
                             <GironeTipo tipo={"A"} />
-                            <Giornata6 girone={"A"} />
+                            <GiornataRow girone={"A"} giornata={5} squadre={[3,0,1,2]}/>
                         </Media>
                         <Media>
                             <GironeTipo tipo={"B"} />
-                            <Giornata6 girone={"B"} />
+                            <GiornataRow girone={"B"} giornata={5} squadre={[3,0,1,2]}/>
                         </Media>
                     </div>
                 )

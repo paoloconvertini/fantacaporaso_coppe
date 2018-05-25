@@ -8,7 +8,6 @@ import { fetchClassEurope, fetchClassChampions, fetchClassItalia } from "../acti
 class MenuLaterale extends Component {
 
     onClick(param) {
-        console.log(param);
         if(param === "") {
             this.props.fetchClassItalia();
         } else if(param === "europe") {
