@@ -4,7 +4,7 @@ import Score from '../Score';
 import MagicPunti from '../MagicPunti';
 import { connect } from "react-redux";
 import Selectors from '../../selectors';
-import { Media } from "react-bootstrap";
+import { Media, Form } from "react-bootstrap";
 
 
 class GironeRow extends Component {
@@ -19,19 +19,21 @@ class GironeRow extends Component {
                         <tbody>
                             <tr>
                                 {<td>
-                                    <Team squadra={gironeA && gironeA[squadre[0]].squadra} />{' '}
-                                    <MagicPunti magic={calGironeA && calGironeA[giornata].magic[0]} />{' '}-{' '}
-                                    <MagicPunti magic={calGironeA && calGironeA[giornata].magic[1]} />{' '}
-                                    <Team squadra={gironeA && gironeA[squadre[1]].squadra} />{' '}
-                                    <Score score={calGironeA && calGironeA[giornata].risultati[0]} />{' '}-{' '}
-                                    <Score score={calGironeA && calGironeA[giornata].risultati[1]} />
+                                    <Form onSubmit={this.onSubmit}>
+                                        <Team squadra={gironeA && gironeA[squadre[0]].squadra} />{' '}
+                                        <MagicPunti index={0} giornata={giornata} girone={girone}/>{' '}-{' '}
+                                        <MagicPunti index={1} giornata={giornata} girone={girone}/>{' '}
+                                        <Team squadra={gironeA && gironeA[squadre[1]].squadra} />{' '}
+                                        <Score score={calGironeA && calGironeA[giornata].risultati[0]} />{' '}-{' '}
+                                        <Score score={calGironeA && calGironeA[giornata].risultati[1]} />
+                                    </Form>
                                 </td>}
                             </tr>
                             <tr>
                                 {<td>
                                     <Team squadra={gironeA && gironeA[squadre[2]].squadra} />{' '}
-                                    <MagicPunti magic={calGironeA && calGironeA[giornata].magic[2]} />{' '}-{' '}
-                                    <MagicPunti magic={calGironeA && calGironeA[giornata].magic[3]} />{' '}
+                                    <MagicPunti index={2} giornata={giornata} girone={girone}/>{' '}-{' '}
+                                    <MagicPunti index={3} giornata={giornata} girone={girone}/>{' '}
                                     <Team squadra={gironeA && gironeA[squadre[3]].squadra} />{' '}
                                     <Score score={calGironeA && calGironeA[giornata].risultati[2]} />{' '}-{' '}
                                     <Score score={calGironeA && calGironeA[giornata].risultati[3]} />
@@ -49,8 +51,8 @@ class GironeRow extends Component {
                             <tr>
                                 {<td>
                                     <Team squadra={gironeB && gironeB[squadre[0]].squadra} />{' '}
-                                    <MagicPunti magic={calGironeB && calGironeB[giornata].magic[0]} />{' '}-{' '}
-                                    <MagicPunti magic={calGironeB && calGironeB[giornata].magic[1]} />{' '}
+                                    <MagicPunti index={0} giornata={giornata} girone={girone}/>{' '}-{' '}
+                                    <MagicPunti index={1} giornata={giornata} girone={girone}/>{' '}
                                     <Team squadra={gironeB && gironeB[squadre[1]].squadra} />{' '}
                                     <Score score={calGironeB && calGironeB[giornata].risultati[0]} />{' '}-{' '}
                                     <Score score={calGironeB && calGironeB[giornata].risultati[1]} />
@@ -59,8 +61,8 @@ class GironeRow extends Component {
                             <tr>
                                 {<td>
                                     <Team squadra={gironeB && gironeB[squadre[2]].squadra} />{' '}
-                                    <MagicPunti magic={calGironeB && calGironeB[giornata].magic[2]} />{' '}-{' '}
-                                    <MagicPunti magic={calGironeB && calGironeB[giornata].magic[3]} />{' '}
+                                    <MagicPunti index={2} giornata={giornata} girone={girone}/>{' '}-{' '}
+                                    <MagicPunti index={3} giornata={giornata} girone={girone}/>{' '}
                                     <Team squadra={gironeB && gironeB[squadre[3]].squadra} />{' '}
                                     <Score score={calGironeB && calGironeB[giornata].risultati[2]} />{' '}-{' '}
                                     <Score score={calGironeB && calGironeB[giornata].risultati[3]} />
@@ -86,12 +88,16 @@ function mapStateToProps(state) {
     } else if (state.param === "champions") {
         return {
             gironeA: Selectors.getChampionsGironeA(state),
-            gironeB: Selectors.getChampionsGironeB(state)
+            gironeB: Selectors.getChampionsGironeB(state),
+            calGironeA: Selectors.getCalChampionsGironeA(state),
+            calGironeB: Selectors.getCalChampionsGironeB(state)
         }
     } else {
         return {
             gironeA: Selectors.getEuropeGironeA(state),
-            gironeB: Selectors.getEuropeGironeB(state)
+            gironeB: Selectors.getEuropeGironeB(state),
+            calGironeA: Selectors.getCalEuropeGironeA(state),
+            calGironeB: Selectors.getCalEuropeGironeB(state)
         }
     }
 };
